@@ -79,33 +79,33 @@ export default function Index() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-brand-cream via-brand-purple-light to-brand-orange-light">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-                May-Dann Group – <span className="text-brand-orange-dark">Compassionate Care</span>, Rooted in Community
-              </h1>
-              <p className="text-xl text-gray-700 leading-relaxed">
-                Delivering home care with <strong>dignity</strong>, <strong>integrity</strong>, and <strong>purpose</strong> since 2020.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-brand-orange hover:bg-brand-orange-dark text-white px-8 py-3">
-                  Learn More About Our Services
-                </Button>
-                <Button size="lg" variant="outline" className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-3">
-                  Find Care Near You
-                </Button>
+      {/* Hero Section - Full Width Banner */}
+      <section className="relative pt-20 pb-0 overflow-hidden">
+        {/* Full-width banner photo */}
+        <div className="relative h-screen max-h-[800px] min-h-[600px]">
+          <img 
+            src="/img/e2810b90-318a-478c-a223-22c9e7678498.jpg" 
+            alt="Smiling caregiver with client in a home setting" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+          
+          {/* Content overlay */}
+          <div className="absolute inset-0 flex items-center">
+            <div className="container mx-auto px-6">
+              <div className="max-w-3xl">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                  May-Dann Group – <span className="text-brand-orange">Compassionate Care</span>, Rooted in Community
+                </h1>
+                <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8">
+                  Delivering home care with <strong>dignity</strong>, <strong>integrity</strong>, and <strong>purpose</strong> since 2020.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="bg-brand-orange hover:bg-brand-orange-dark text-white px-8 py-4 text-lg">
+                    Learn More About Our Services
+                  </Button>
+                </div>
               </div>
-            </div>
-            <div className="relative">
-              <img 
-                src="/img/e6904b10-fecb-4073-8809-2a5a738f052e.jpg" 
-                alt="Caregiver with client" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
             </div>
           </div>
         </div>
@@ -199,15 +199,43 @@ export default function Index() {
             </h2>
           </div>
 
+          {/* US Map with highlighted states */}
+          <div className="mb-16">
+            <div className="relative max-w-4xl mx-auto">
+              <div className="bg-white rounded-3xl shadow-2xl p-8">
+                <img 
+                  src="/img/ea9fe4fd-539a-4e39-9750-e9f0f8547af9.jpg" 
+                  alt="US Map with Virginia and Alabama highlighted" 
+                  className="w-full h-auto rounded-xl"
+                />
+                <div className="grid md:grid-cols-2 gap-4 mt-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-4 h-4 bg-brand-orange rounded-full"></div>
+                    <span className="font-semibold text-gray-800">Virginia</span>
+                    <span className="text-gray-600">- Since 2021</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-4 h-4 bg-brand-orange-dark rounded-full"></div>
+                    <span className="font-semibold text-gray-800">Alabama</span>
+                    <span className="text-gray-600">- Since 2023</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-12">
             {/* Virginia */}
             <Card className="p-8 shadow-lg hover:shadow-xl transition-shadow border-l-4 border-brand-orange">
               <CardContent className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center">
-                    <Icon name="MapPin" className="h-6 w-6 text-white" />
+                  <div className="w-16 h-16 bg-brand-orange rounded-full flex items-center justify-center">
+                    <Icon name="MapPin" className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900">BrightSouls Virginia</h3>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">BrightSouls Virginia</h3>
+                    <div className="w-12 h-1 bg-brand-orange rounded-full mt-2"></div>
+                  </div>
                 </div>
                 <p className="text-gray-700">
                   <strong>Formerly Cleansing Water Inc.</strong> - Acquired 2021
@@ -226,10 +254,13 @@ export default function Index() {
             <Card className="p-8 shadow-lg hover:shadow-xl transition-shadow border-l-4 border-brand-orange-dark">
               <CardContent className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-brand-orange-dark rounded-full flex items-center justify-center">
-                    <Icon name="MapPin" className="h-6 w-6 text-white" />
+                  <div className="w-16 h-16 bg-brand-orange-dark rounded-full flex items-center justify-center">
+                    <Icon name="MapPin" className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900">BrightSouls Alabama</h3>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">BrightSouls Alabama</h3>
+                    <div className="w-12 h-1 bg-brand-orange-dark rounded-full mt-2"></div>
+                  </div>
                 </div>
                 <p className="text-gray-700">
                   <strong>Formerly Elder Care of North Alabama</strong> - Acquired 2023
@@ -306,21 +337,32 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Closing CTA */}
-      <section className="py-20 bg-gradient-to-br from-brand-orange to-brand-purple text-white">
-        <div className="container mx-auto px-6 text-center">
+      {/* Closing CTA with Visual */}
+      <section className="relative py-20 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img 
+            src="/img/af1270cd-7627-4f43-a93c-6f17b6d45bcb.jpg" 
+            alt="Smiling caregiver and client hand-in-hand, reinforcing trust" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/90 to-brand-purple/90"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="relative container mx-auto px-6 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
               May-Dann Group – <span className="text-brand-cream">Here for You</span>, Here for Your Family
             </h2>
-            <p className="text-xl opacity-90 leading-relaxed">
-              Compassionate care, <span className="text-brand-purple-light font-semibold">trusted caregivers</span>, and a promise to <span className="text-brand-purple-light font-semibold">honor every legacy</span>.
+            <p className="text-xl text-white/95 leading-relaxed">
+              Compassionate care, <span className="text-brand-cream font-semibold">trusted caregivers</span>, and a promise to <span className="text-brand-cream font-semibold">honor every legacy</span>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-              <Button size="lg" className="bg-brand-cream text-brand-orange hover:bg-white px-8 py-3 font-semibold">
+              <Button size="lg" className="bg-brand-cream text-brand-orange hover:bg-white px-8 py-4 font-semibold text-lg">
                 Find Care Near You
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-orange px-8 py-3 font-semibold">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-orange px-8 py-4 font-semibold text-lg">
                 Join Our Team
               </Button>
             </div>
