@@ -61,7 +61,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// May-Dann Group brand colors
+				'brand-orange': '#FEA252',
+				'brand-orange-light': '#FFD1A9',
+				'brand-cream': '#FFFAF5',
+				'brand-purple': '#926EF9',
+				'brand-purple-light': '#DBCFFD',
+				'brand-orange-dark': '#F97401',
+				'brand-blue': '#4307B5'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
